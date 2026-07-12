@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ecosphere
+    ports:
+      - "5432:5432"
+    volumes:
+      - ecosphere_pgdata:/var/lib/postgresql/data
+
+volumes:
+  ecosphere_pgdata:

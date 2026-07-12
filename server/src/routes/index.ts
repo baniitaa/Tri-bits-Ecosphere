@@ -1,0 +1,30 @@
+import { Router } from "express";
+import { authRouter } from "./auth.routes";
+import { rolesRouter } from "./roles.routes";
+import { usersRouter } from "./users.routes";
+import { departmentsRouter } from "./departments.routes";
+import { employeesRouter } from "./employees.routes";
+import { settingsRouter } from "./settings.routes";
+import { dashboardRouter } from "./dashboard.routes";
+import { environmentalRouter } from "./environmental.routes";
+import { socialRouter } from "./social.routes";
+import { governanceRouter } from "./governance.routes";
+import { gamificationRouter } from "./gamification.routes";
+import { reportsRouter } from "./reports.routes";
+import { notificationsRouter } from "./notifications.routes";
+
+export const apiRouter = Router();
+
+apiRouter.use("/auth", authRouter);
+apiRouter.use("/roles", rolesRouter);
+apiRouter.use("/users", usersRouter);
+apiRouter.use("/departments", departmentsRouter);
+apiRouter.use("/employees", employeesRouter);
+apiRouter.use("/settings", settingsRouter);
+apiRouter.use("/dashboard", dashboardRouter);
+apiRouter.use("/environmental", environmentalRouter);
+apiRouter.use("/social", socialRouter);
+apiRouter.use("/governance", governanceRouter);
+apiRouter.use("/gamification", gamificationRouter);
+apiRouter.use("/reports", reportsRouter);
+apiRouter.use("/notifications", notificationsRouter);
