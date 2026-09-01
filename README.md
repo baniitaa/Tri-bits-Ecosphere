@@ -1,31 +1,72 @@
-# EcoSphere ESG Management Platform
+﻿# EcoSphere ESG Management Platform
 
-Single-organization ESG management platform for environmental, social, and governance operations.
+EcoSphere is a web app for tracking environmental, social, and governance activity in one place. It pairs a React front end with a Node.js and Express API, Prisma, and a relational database.
 
-## Start
+## Repository Layout
 
-1. `DATABASE_URL` is already configured for local SQLite in `.env`.
-2. Install dependencies with `npm install`
-3. Generate Prisma client with `npm run prisma:generate`
-4. Push the schema with `npx prisma db push --schema server/prisma/schema.prisma`
-5. Seed demo data with `npm run seed`
-6. Run the app with `npm run dev`
+```text
+.
+├── client/
+├── server/
+├── shared/
+├── package.json
+├── docker-compose.yml
+└── README.md
+```
 
-## Demo Credentials
+## Quick Start
 
-- Admin: `admin@ecosphere.local`
-- Password: `Admin@12345`
+1. Install dependencies:
 
-## Verify
+```bash
+npm install
+```
 
-1. `npm run build`
+2. Generate the Prisma client:
+
+```bash
+npm run prisma:generate
+```
+
+3. Apply the database schema:
+
+```bash
+npx prisma db push --schema server/prisma/schema.prisma
+```
+
+4. Seed demo data:
+
+```bash
+npm run seed
+```
+
+5. Start the app:
+
+```bash
+npm run dev
+```
+
+## Demo Flow
+
+1. Build the project:
+
+```bash
+npm run build
+```
+
 2. Open `http://localhost:5173`
-3. Log in with the admin credentials
-4. Check Dashboard, Environmental, Social, Governance, Gamification, Reports, and Notifications
+3. Log in with the local demo account defined in the seed data
+4. Review the Dashboard, Environmental, Social, Governance, Gamification, Reports, and Notifications sections
 
 ## Stack
 
-- React, Vite, TypeScript, TailwindCSS, shadcn-style UI
-- Node.js, Express, TypeScript
-- PostgreSQL, Prisma ORM
-- JWT authentication and RBAC
+- Front end: React, Vite, TypeScript, Tailwind CSS
+- Back end: Node.js, Express, TypeScript
+- Database: PostgreSQL with Prisma ORM
+- Auth: JWT and RBAC
+
+## Notes
+
+- `.env` is configured for local SQLite during development.
+- `shared/` holds code reused across the client and server.
+- The app is set up for a straightforward local demo flow, not a large multi-tenant deployment.
